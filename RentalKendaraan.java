@@ -1,37 +1,5 @@
 import java.util.Scanner;
 
-class BarangRental {
-    String noTNKB;
-    String namaKendaraan;
-    String jenisKendaraan;
-    int tahun;
-    int biayaSewa;
-
-    BarangRental(String noTNKB, String namaKendaraan, String jenisKendaraan, int tahun, int biayaSewa) {
-        this.noTNKB = noTNKB;
-        this.namaKendaraan = namaKendaraan;
-        this.jenisKendaraan = jenisKendaraan;
-        this.tahun = tahun;
-        this.biayaSewa = biayaSewa;
-    }
-}
-
-    class TransaksiRental {
-        int kodeTransaksi;
-        String namaPeminjam;
-        int lamaPinjam;
-        double totalBiaya;
-        BarangRental br;
-        
-        public TransaksiRental (String namaPeminjam, int lamaPinjam, BarangRental barang) {
-        this.kodeTransaksi = kodeTransaksi;
-        this.namaPeminjam = namaPeminjam;
-        this.lamaPinjam = lamaPinjam;
-        this.br = br;
-        this.totalBiaya = totalBiaya;
-    }
-}
-
 public class RentalKendaraan {
     static BarangRental[] barangRental = {
         new BarangRental("S 4567 YV", "Honda Beat", "Motor", 2017, 10000),
@@ -103,42 +71,41 @@ public class RentalKendaraan {
         newTransaksiRental[transaksiRentals.length] = transaksiRental;
         return newTransaksiRental;
     }
-
     public static void main(String[] args) throws Exception{
-            Scanner sc = new Scanner(System.in);
-            int menu;
-    
-            while (true) {
-                System.out.println("Menu ");
-                System.out.println("1. Daftar Kendaraan");
-                System.out.println("2. Peminjaman");
-                System.out.println("3. Tampilkan Seluruh Transaksi");
-                System.out.println("4. Urutkan Transaksi Urut no TNKB");
-                System.out.println("5. Exit");
-                System.out.print("Pilih (1-5): ");
-                menu = sc.nextInt();
-    
-                switch (menu) {
-                    case 1:
-                        showBarangRental();
-                        break;
-                    case 2:
-                        peminjamBarangRental(sc);
-                        break;
-                    case 3:
-                        showTransaksiRental();
-                        break;
-                    case 4:
-                        sortTransaksiRental();
-                        break;
-                    case 5:
-                        System.out.println("Terimakasih telah menggunakan program ini.");
-                        sc.close();
-                        return;
-                    default:
-                        System.out.println("Pilihan tidak valid.");
-                        break;
-            }
+        Scanner sc = new Scanner(System.in);
+        int menu;
+
+        while (true) {
+            System.out.println("Menu ");
+            System.out.println("1. Daftar Kendaraan");
+            System.out.println("2. Peminjaman");
+            System.out.println("3. Tampilkan Seluruh Transaksi");
+            System.out.println("4. Urutkan Transaksi Urut no TNKB");
+            System.out.println("5. Exit");
+            System.out.print("Pilih (1-5): ");
+            menu = sc.nextInt();
+
+            switch (menu) {
+                case 1:
+                    showBarangRental();
+                    break;
+                case 2:
+                    peminjamBarangRental(sc);
+                    break;
+                case 3:
+                    showTransaksiRental();
+                    break;
+                case 4:
+                    sortTransaksiRental();
+                    break;
+                case 5:
+                    System.out.println("Terimakasih telah menggunakan program ini.");
+                    sc.close();
+                    return;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+                    break;
         }
     }
+}
 }
